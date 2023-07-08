@@ -25,8 +25,8 @@ spring:
       discovery:
         locator:
           enabled: true
-      default-filters:
-        - TokenRelay
+      # default-filters:
+      #   - TokenRelay
       routes:
         - id: products-route
           uri: lb://PRODUCTS
