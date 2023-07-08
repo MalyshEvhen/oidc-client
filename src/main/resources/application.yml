@@ -25,12 +25,11 @@ spring:
       discovery:
         locator:
           enabled: true
-          lower-case-service-id: true
       default-filters:
         - TokenRelay
       routes:
         - id: products-route
-          uri: lb://products
+          uri: lb://PRODUCTS
           predicates:
             - Path=/products/**
 
@@ -41,6 +40,9 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka/
+    register-with-eureka: true
+    fetch-registry: true
+
 
 logging:
   level:
